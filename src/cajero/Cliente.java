@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
-/**
+  /**
  * Método Cliente, en este método se declara 
  * todas las variables a utilizar en la clase Cliente.
  * 
@@ -22,7 +22,7 @@ public class Cliente {
     public int cheque;
     public int credito;
     
-    /**
+      /**
      * Método Limpiar, en este método se inicializan
      * las variables con el valor cero, o con “” para 
      * vaciarlas, este método permite borrar datos basura, 
@@ -39,7 +39,8 @@ public class Cliente {
         this.credito = 0;
         return 0;
     }
-     /**
+    
+      /**
      * Método Buscar, este método permite buscar un registro de una 
      * persona, el dato que se pide para la busque es el nit, este
      * metodo implementa un BufferedReader para leer el archivo de 
@@ -50,9 +51,9 @@ public class Cliente {
      * se activaran al momento de no encontrar el archivo de texto 
      * de clientes “clientes.txt”.
      * 
-     * @param nit, String identificador de cliente a buscar 
-     * @return, retorna un valor para poder saber que la búsqueda ha sido exitosa 
-     * @throws, Exception muestra un excepción si no se encuentra el archivo cliente.txt
+     * @param nit String identificador de cliente a buscar 
+     * @return retorna un valor para poder saber que la búsqueda ha sido exitosa 
+     * @throws Exception muestra un excepción si no se encuentra el archivo cliente.txt
      */
     public int buscar(String nit) throws Exception{
         String[] registro = new String[4];
@@ -81,16 +82,17 @@ public class Cliente {
         }
         return encontrado;
     }
-     /**
+    
+      /**
      * Método Agregar, en este método se utiliza un BufferedWriter 
      * para escribir en un archivo de texto llamado “clientes.txt” 
      * el cual lleva el registro de clientes que se ingresaran, si
      * el ingreso es exitoso se retornar “1” pero por si alguna 
      * razón el retorno no lo es se regresar un excepción que retornara 0.
      * 
-     * @param nit, String que se utiliza para poner un número de identificación al cliente y que es único 
-     * @param nombre, String que se utiliza para ingresar el nombre del cliente que se agregara 
-     * @return, retorna un valor para saber si se ha agregado exitosamente o no 
+     * @param nit String que se utiliza para poner un número de identificación al cliente y que es único 
+     * @param nombre String que se utiliza para ingresar el nombre del cliente que se agregara 
+     * @return retorna un valor para saber si se ha agregado exitosamente o no 
      */
     public int agregar(String nit,String nombre){
         String linea;
