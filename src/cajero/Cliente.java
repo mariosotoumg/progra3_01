@@ -80,7 +80,7 @@ public class Cliente {
         String linea;
         try {
             BufferedWriter clientesA  = new BufferedWriter(new FileWriter("clientes.txt",true));
-            linea = nit + "|" + nombre + "|0|0";
+            linea = nit + "|" + nombre + "|0|0|";
             clientesA.write(linea);
             clientesA.newLine();
             clientesA.flush();
