@@ -10,7 +10,8 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
- * El método Cliente, este método es utilizado para la inicialización de las variables a utilizar en la clase Cliente 
+ * Método Cliente, en este método se declara 
+ * todas las variables a utilizar en la clase Cliente.
  * 
  * @author Gerson
  */
@@ -23,8 +24,13 @@ public class Cliente {
     public int credito;
     
   /**
-   *El método Limpiar, este método es encargado de limpiar las variables utilizadas anteriormente para que así desechar datos basura que no utilizaremos y  que podrían afectar a datos resientes que deseemos ingresar     
-   *
+   * Método Limpiar, en este método se inicializan
+   * las variables con el valor cero, o con “” para 
+   * vaciarlas, este método permite borrar datos basura, 
+   * los cuales se quedan al utilizar las variables, 
+   * este método permite que no se encuentre errores 
+   * por esos datos al ingresar uno nuevo. 
+   * 
    * @return 
    */  
 
@@ -36,7 +42,15 @@ public class Cliente {
         return 0;
     }
 /**
- * El meto buscar, la funcionalidad de este método es la de ingresar un cierto parámetro ingresándolo por la variable denominada nit, este los compara en un archivo de texto, y si se ha logrado encontrado este mostrara los datos del cliente, pero si la búsqueda no es  exitosa muestra un mensaje que en el cual dice que no se ha encontrado los datos del Cliente  
+ * Método Buscar, este método permite buscar un registro de una 
+ * persona, el dato que se pide para la busque es el nit, este
+ * metodo implementa un BufferedReader para leer el archivo de 
+ * texto, si el método logra encontrar su busque se retornara 
+ * como encontrado y mostrara los datos, en caso contrario se 
+ * presentaran dos Excepciones, las cuales dicen lo siguiente 
+ * “Archivo no encontrado” o “Archivo no accesible” las cuales 
+ * se activaran al momento de no encontrar el archivo de texto 
+ * de clientes “clientes.txt”.
  * 
  * @param nit
  * @return
@@ -70,7 +84,11 @@ public class Cliente {
         return encontrado;
     }
     /**
-     * El método agregar, la funcionalidad de este es la de agregar un nuevo registro en este caso al archivo de texto, en esta función se deben ingresar los datos básicos que son el nit y nombre del cliente a ingresar.
+     * Método Agregar, en este método se utiliza un BufferedWriter 
+     * para escribir en un archivo de texto llamado “clientes.txt” 
+     * el cual lleva el registro de clientes que se ingresaran, si
+     * el ingreso es exitoso se retornar “1” pero por si alguna 
+     * razón el retorno no lo es se regresar un excepción que retornara 0.
      * 
      * @param nit
      * @param nombre

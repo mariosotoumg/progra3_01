@@ -25,6 +25,7 @@ public class Cajero extends javax.swing.JDialog {
     public Cajero(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+          this.setLocationRelativeTo(null);
     }
 
     /**
@@ -266,6 +267,11 @@ public class Cajero extends javax.swing.JDialog {
         jLabel1.setText("Nit");
 
         jTextField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
@@ -459,6 +465,10 @@ public class Cajero extends javax.swing.JDialog {
         jTextField8.setText("0");
 
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void recalcularCaja(){
         int total = 0;
