@@ -463,7 +463,7 @@ public class Cajero extends javax.swing.JDialog {
             pago.cheque(cheque);
         }
         if(Integer.parseInt(credito) > 0){
-            this.credito.debito(this.cliente.nit,credito);
+            this.credito.debito(pago.fecha,this.cliente.nit,credito);
         }
         if(Integer.parseInt(tarjeta) > 0){
             pago.tarjeta(tarjeta);

@@ -24,7 +24,7 @@ public class Credito {
      * @throws Exception
      */
     public int saldo(String nit) throws Exception{
-        String[] registro = new String[3];
+        String[] registro = new String[4];
         String linea;
         BufferedReader creditoA;
         int cobrado = 0;
@@ -33,9 +33,9 @@ public class Credito {
             creditoA = new BufferedReader(new FileReader("credito.txt"));
             while ( (linea = creditoA.readLine() ) != null) {
                 registro = linea.split("\\|");
-                if(nit.compareTo(registro[0]) == 0){
-                    cobrado += Integer.parseInt(registro[1]);
-                    pagado  += Integer.parseInt(registro[2]);
+                if(nit.compareTo(registro[1]) == 0){
+                    cobrado += Integer.parseInt(registro[2]);
+                    pagado  += Integer.parseInt(registro[3]);
                 }
             }
             creditoA.close();
@@ -47,12 +47,12 @@ public class Credito {
         return pagado-cobrado;
     }
 
-    public void debito(String nit,String monto){
+    public void debito(String fecha,String nit,String monto){
         String linea;
         try {
             BufferedWriter efectivoA  = new BufferedWriter(new FileWriter("credito.txt",true));
 
-            linea = nit + "|" + String.valueOf(monto)+"|0\n";
+            linea = fecha + "|" + nit + "|" + String.valueOf(monto)+"|0";
             efectivoA.write(linea);
             efectivoA.newLine();
             efectivoA.flush();
