@@ -20,6 +20,11 @@ class Pago {
     private SimpleDateFormat sdfecha = new SimpleDateFormat("yyyy-MM-dd");
     public String fecha  = sdfecha.format(new Date() );
 
+    
+     /**
+     * 
+     * @param monto 
+     */
     public void efectivo(String monto){
         String linea;
         try {
