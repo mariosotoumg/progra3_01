@@ -22,8 +22,16 @@ class Pago {
 
     
      /**
+     * Método efectivo, esto método se utiliza para ingresar el pago del 
+     * cliente en caso que decida para en efectivo, se utilizara un 
+     * String monto para el ingreso del efectivo que desee pagar, se 
+     * implementa un BufferedWriter para escribir en el archivo “efectivo.txt” 
+     * donde llevamos registro del monto a pagar, en este se ingresara 
+     * los datos básicos como son  la fecha y el moto, por último
+     * se declara una excepción por si no se logra encontrar el 
+     * archivo o no se logra  ingresar.
      * 
-     * @param monto 
+     * @param monto String que se utiliza para el ingreso del monto
      */
     public void efectivo(String monto){
         String linea;
@@ -40,6 +48,18 @@ class Pago {
         }
     }
 
+      /**
+     * Método cheque, este método se utiliza al momento de 
+     * que el cliente desee pagar con un cheque, se utilizara 
+     * un String denominado monto para ingresar la cantidad 
+     * a pagar, el ingreso se realizara con un BufferedWriter 
+     * para escribir en el registro de pago en un archivo de 
+     * texto llamado “cheque.txt”, los datos ingresados serán 
+     * la fecha y hora en el momento del ingreso y el monto
+     * que se está realizando.
+     * 
+     * @param monto String que se utiliza para el ingreso del monto
+     */
     public void cheque(String monto){
         String linea;
         try {
