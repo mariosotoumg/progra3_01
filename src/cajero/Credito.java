@@ -47,6 +47,16 @@ public class Credito {
         return pagado-cobrado;
     }
 
+    /**
+     * Método debito, en este método registra la fecha de la operacion
+     * asi como el numero de nit del cliente y el monto que esta quedando
+     * como credito que se le otroga al cliente, este registor queda grabado
+     * en un documento de texto llamado "credito.txt".
+     * 
+     * @param fecha String que se usa para la fecha
+     * @param nit String que se usa para el nit
+     * @param monto String que se usa para el monto
+     */
     public void debito(String fecha,String nit,String monto){
         String linea;
         try {

@@ -75,6 +75,12 @@ class Pago {
         }
     }
 
+    /**
+     * Método tarjeta, en este método registra todos los pagos realizados con tarjeta,
+     * guarda la fecha de la operacion y el moto en un documento de texto llamado "tarjeta.txt".
+     * 
+     * @param monto String que se usa para la fecha
+     */
     public void tarjeta(String monto){
         String linea;
         try {
