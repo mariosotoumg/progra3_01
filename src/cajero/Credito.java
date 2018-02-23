@@ -13,6 +13,28 @@ import java.io.IOException;
  */
 public class Credito {
 
+    public int getCredito(String fecha) throws Exception{
+        String[] registro = new String[4];
+        String linea;
+        BufferedReader creditoA;
+        int pagado = 0;
+        try{
+            creditoA = new BufferedReader(new FileReader("credito.txt"));
+            while ( (linea = creditoA.readLine() ) != null) {
+                registro = linea.split("\\|");
+                if(fecha.compareTo(registro[0]) == 0){
+                    pagado  += Integer.parseInt(registro[2]);
+                }
+            }
+            creditoA.close();
+        } catch (FileNotFoundException ex) {
+            throw new Exception("Archivo no encontrado");
+        } catch (IOException ex) {
+            throw new Exception("Archivo no accesible");
+        }
+        return pagado;
+    }
+
     /**
      * Método saldo, en este método se busca el saldo del cliente a través del
      * nit para verificar si es posible que el cliente puede seguir con su crédito
@@ -52,7 +74,7 @@ public class Credito {
      * asi como el numero de nit del cliente y el monto que esta quedando
      * como credito que se le otroga al cliente, este registor queda grabado
      * en un documento de texto llamado "credito.txt".
-     * 
+     *
      * @param fecha String que se usa para la fecha
      * @param nit String que se usa para el nit
      * @param monto String que se usa para el monto
