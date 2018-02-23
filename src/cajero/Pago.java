@@ -43,6 +43,13 @@ class Pago {
         }
     }
 
+    /**
+     * Devuelve el total de cobros en efectivo para una fecha especificada
+     *
+     * @param fecha formato YYYY-MM-DD
+     * @return int suma de cobros
+     * @throws Exception
+     */
     public int getEfectivo(String fecha) throws Exception{
         String[] registro = new String[2];
         String linea;
@@ -85,6 +92,13 @@ class Pago {
         }
     }
 
+    /**
+     * Devuelve el total de cobros por cheque para una fecha especificada
+     *
+     * @param fecha formato YYYY-MM-DD
+     * @return int 0: total de documentos; 1: suma de cobros
+     * @throws Exception
+     */
     public int[] getCheque(String fecha) throws Exception{
         String[] registro = new String[2];
         int[] retorno = new int[2];
@@ -132,6 +146,13 @@ class Pago {
         }
     }
 
+    /**
+     * Devuelve el total de cobros por tarjeta para una fecha especificada
+     *
+     * @param fecha formato YYYY-MM-DD
+     * @return int suma de cobros
+     * @throws Exception
+     */
     public int getTarjeta(String fecha) throws Exception{
         String[] registro = new String[2];
         String linea;
