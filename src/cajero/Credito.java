@@ -13,6 +13,16 @@ import java.io.IOException;
  */
 public class Credito {
 
+       /**
+      * La función getCredito, es una función que sirve para buscar el crédito 
+      * por medio del String fecha se utiliza un bufferdReader para poder abrir
+      * el archivo “crédito.txt” donde se encuentran todos los registro de pago
+      * a crédito que se necesitan
+      * 
+      * @param fecha este String sirve para la búsqueda del crédito 
+      * @return este devuelve el resultado del pago si se a logrado hacer todos los procesos exitosamente 
+      * @throws Exception 
+      */
     public int getCredito(String fecha) throws Exception{
         String[] registro = new String[4];
         String linea;
